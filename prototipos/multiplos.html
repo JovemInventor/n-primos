@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de numeros primos</title>
+</head>
+<body>
+ 
+        <input type="number" id="num"/>
+        <select style="user-select: none; box-sizing: border-box; width: 70px; height: 22px; font-size: 0.8em;" id="op">
+            <option value="10" id="op1">10</option>
+            <option value="100" id="op2">100</option>
+            <option value="1000" id="op3">1000</option>
+        </select>
+        <button onclick="ok()">OK</button><br><br>
+        <div id="r0"></div><br>
+        <div id="r1"></div>
+
+    <script>
+        function ok(){
+            let n = 0;
+            let t = Number(document.getElementById('num').value); 
+            let quant = Number(document.getElementById('op').value); 
+            let num = 1;
+
+            r0.innerHTML = "";
+
+            for(n=1;n<=quant;n++){
+                num = t * n;
+                console.log(num);
+                    if (r0.innerHTML == ""){
+                        r0.innerHTML = num;
+                    }else{
+                        r0.innerHTML = r0.innerHTML + ",  " + num;
+                    }
+            }
+
+            console.log("" + quant + " multiplos.");
+            r1.innerHTML = "" + quant + " multiplos.";
+
+        }
+    </script>
+
+    <br><a href="index.html">voltar</a>
+</body>
+</html>

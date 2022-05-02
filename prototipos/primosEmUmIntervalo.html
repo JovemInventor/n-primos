@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de numeros primos em um intervalo</title>
+</head>
+<body>
+ 
+        <input type="number" id="numI"/>
+        <input type="number" id="numF"/>
+        <button onclick="ok()">OK</button><br><br>
+        <div id="r0"></div><br>
+        <div id="r1"></div><br>
+
+    <script>
+        function ok(){
+            let numI = Number(document.getElementById('numI').value);
+            let numF = Number(document.getElementById('numF').value);
+            let n = 0;
+            let rept = 1;
+            let primos = 0;
+            let div = 0;
+
+            r0.innerHTML = "";
+
+            for(n=numI;n<=numF;n++){
+                div = 0;
+
+                for(rept=1;rept<=n;rept++){
+                    if((n % rept) == 0){
+                    console.log(n);
+                    div++;
+                    }else{}
+                }
+
+                if(div == 2){
+                    primos++;
+                    r0.innerHTML = r0.innerHTML + "Tem "+primos+" é "+(rept-1)+"<br>"; 
+                    r1.innerHTML = "Tem "+primos+" n° primos de "+numI+" a "+numF;       
+              }else{}
+
+            }
+        }
+    </script>
+
+
+
+    <a href="index.html">voltar</a>
+</body>
+</html>

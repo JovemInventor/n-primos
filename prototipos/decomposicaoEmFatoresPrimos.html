@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de decomposição em fatores primos</title>
+</head>
+<body>
+ 
+        <input type="number" id="num"/>
+        <button onclick="ok()">OK</button><br><br>
+        <div id="r0"></div><br>
+        <div id="r1"></div><br>
+        <div id="r2"></div><br>
+
+    <script>
+        function ok(){
+            let numF = Number(document.getElementById('num').value);
+            let num = 1; 
+            let rept = 1;
+
+            r0.innerHTML = "";
+
+            for(rept=1;rept<=numF;rept++){
+                let num2 = rept;
+                let div = 0;
+                let rept2 = 1;
+
+                for(rept2;rept2<=num2;rept2++){
+                    if((num2 % rept2) == 0){
+                    div++;
+                    }else{}
+                }
+
+                if(div==2 & numF%num2 == 0){
+                    r0.innerHTML = r0.innerHTML + "primo : " + num2 + "<br>";
+                    console.log("primo"+num2);
+                    numF=numF/num2;
+                    r0.innerHTML = r0.innerHTML + "divisão : " + numF + "<br>";
+                    console.log("divisão"+numF);
+                    if(r1.innerHTML == ""){
+                        r1.innerHTML = num2;
+                        r2.innerHTML = numF;
+                    }else{
+                        r1.innerHTML = r1.innerHTML + ", " + num2;
+                        r2.innerHTML = r2.innerHTML + ", " + numF;
+                    }
+                    rept=1;
+                }else{}
+            }
+        }
+        
+    </script>
+
+    <a href="index.html">voltar</a>
+</body>
+</html>

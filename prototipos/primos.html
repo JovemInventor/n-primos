@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de numeros primos</title>
+</head>
+<body>
+ 
+        <input type="number" id="num"/>
+        <button onclick="ok()">OK</button><br><br>
+        <div id="r0"></div><br>
+        <div id="r1"></div><br>
+        <div id="r2"></div>
+
+    <script>
+        function ok(){
+            let n = 0;
+            let t = Number(document.getElementById('num').value); 
+            let div = 0;
+
+            r0.innerHTML = "";
+
+            for(n=1;n<=t;n++){
+                if((t % n) == 0){
+                console.log(n);
+                    if (r0.innerHTML == ""){
+                        r0.innerHTML = n;
+                    }else{
+                        r0.innerHTML = r0.innerHTML + ",  " + n;
+                    }
+                div++;
+                }else{}
+            }
+
+            console.log("Tem " + div + " divisores.");
+            r1.innerHTML = "Tem " + div + " divisores.";
+
+            if(div == 2){
+                console.log("O número informado é primo");
+                r2.innerHTML = "O número informado é primo";
+            }else{
+                console.log("O número informado não é primo");
+                r2.innerHTML = "O número informado não é primo";
+            }
+        }
+    </script>
+
+
+
+    <br><a href="index.html">voltar</a>
+</body>
+</html>
